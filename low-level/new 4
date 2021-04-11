@@ -1,4 +1,0 @@
-EXPLAIN SELECT b.id, a.type, a.routetable_id, a.vnet_id, b.routerule_id, b.src_addr, b.dst_addr, b.nexthop_type, b.nexthop_id, b.priority FROM t_route_table a, t_route_rule b, t_vnet_info c WHERE a.routetable_id = b.routetable_id AND a.vnet_id=c.vnet_id AND c.type=1 AND c.is_deleted=0 AND a.is_deleted=0 AND b.is_deleted=0 AND a.account_id != 2344;
-
-EXPLAIN SELECT b.id, a.type, a.routetable_id, a.vnet_id, b.routerule_id, b.src_addr, b.dst_addr, b.nexthop_type, b.nexthop_id, b.priority FROM 
-t_vnet_info c JOIN t_route_table a ON c.vnet_id=a.vnet_id AND a.is_deleted=0 JOIN t_route_rule b ON a.routetable_id = b.routetable_id AND b.is_deleted=0 WHERE c.type=1 AND c.is_deleted=0 AND c.account_id !=2344
