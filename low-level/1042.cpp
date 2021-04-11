@@ -7,51 +7,50 @@ using namespace std;
 struct student
 {
     int number;
-    int score;
+    int chinese;
+    int math;
+    int english;
 };
 
 bool compare(student a, student b)
 {
-    if (a.score != b.score)
+    int atotal = a.chinese + a.math + a.english;
+    int btotal = b.chinese + b.math + b.english;
+    if (atotal != btotal)
     {
-        return a.score > b.score; //从大到小排序
+        return atotal > btotal; //先按照总分，从大到小排序
+    }
+    else if (a.chinese != b.chinese)
+    {
+        return a.chinese > b.chinese; //按照语文成绩从大到小排序
     }
     else
     {
-        return a.number < b.number; //从小到大排序
+        return a.number < b.number; //最后一种情况，按照学号从小到大排序
     }
 }
 
 int main()
 {
-    int people, pass;
-    cin >> people >> pass;
+    int people;
+    cin >> people;
     //读取学生学号和成绩
     vector<student> students;
-    if (people == 20) people--;
 
     for (int i = 1; i <= people; i++)
     {
         student stu;
-        cin >> stu.number >> stu.score;
+        stu.number = i;
+        cin >> stu.chinese >> stu.math >> stu.english;
         students.push_back(stu);
     }
 
     sort(begin(students), end(students), compare); //对学生成绩进行排名
 
-    //输出过线的分数和过线的人数
-    int passpeople = floor(pass * 1.5); //向下取整
-    for (int j = passpeople; j <= people; ++j)
-    {
-        if (students[j].score == students[passpeople-1].score)
-            passpeople++;
-    }
-    cout << students[passpeople - 1].score << ' ' << passpeople << endl;
-
     //输出所有的学生学号和成绩
-    for (int i = 0; i < passpeople; ++i)
+    for (int i = 0; i < 5; ++i)
     {
-        cout << students[i].number << ' ' << students[i].score << endl;
+        cout << students[i].number << " " << students[i].chinese + students[i].math + students[i].english << endl;
     }
     return 0;
 }
