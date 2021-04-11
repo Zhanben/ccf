@@ -14,25 +14,24 @@ using namespace std;
 
 int gcd(int a, int b)
 {
-    if(b==0)
+    if (b == 0)
         return a;
-    else 
-        return gcd(b,a%b);
+    else
+        return gcd(b, a % b);
 }
 
 int main()
 {
     int m, n;
     cin >> m >> n;
-    assert(m>=1 && n>=1);
-    if (1 == gcd (m, n)){
+    assert(m >= 1 && n >= 1);
+    if (1 == gcd(m, n))
+    {
         cout << "Yes" << endl;
-    }else{
+    }
+    else
+    {
         cout << "No" << endl;
     }
     return 0;
 }
- 
- 
-
-   

@@ -1,25 +1,15 @@
-#include<iomanip>
-#include<iostream>
+#include <iomanip>
+#include <iostream>
 #include <math.h>
 using namespace std;
 int main()
 {
-	double a,b,r;
-	cin>>a>>b;
-	r = a - trunc(a/b)*b; 
-	cout<<fixed<<setprecision(2)<<r<<endl;
+	double a, b, r;
+	cin >> a >> b;
+	r = a - trunc(a / b) * b;
+	cout << fixed << setprecision(2) << r << endl;
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 /*
 舍尾取整函数 trunc(),trunc(x)返回的是x舍取小数位后的整数。

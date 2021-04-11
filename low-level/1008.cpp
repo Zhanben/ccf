@@ -1,20 +1,22 @@
 #include <iostream>
-#include <math.h> 
+#include <math.h>
 using namespace std;
 
-int main() {
+int main()
+{
 	int n;
-	cin>>n;
-	
-	int a,b,c;
-	a=n/100;
-	b=(n%100)/10;
-	c=(n%100)%10;
-	if(pow(a,3)+pow(b,3)+pow(c,3)==n)cout<<"YES";
-	else cout<<"NO";
+	cin >> n;
+
+	int a, b, c;
+	a = n / 100;
+	b = (n % 100) / 10;
+	c = (n % 100) % 10;
+	if (pow(a, 3) + pow(b, 3) + pow(c, 3) == n)
+		cout << "YES";
+	else
+		cout << "NO";
 	return 0;
 }
-
 
 /*
 1、开根号函数 sqrt(), sqrt(x)返回的是平方根

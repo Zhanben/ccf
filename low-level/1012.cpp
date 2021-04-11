@@ -4,19 +4,24 @@
 
 using namespace std;
 
-int main() {
-	int x,y;
+int main()
+{
+	int x, y;
 	cin >> x;
 	y = x % 123;
-	if (y <= 122 && y >= 97) {
+	if (y <= 122 && y >= 97)
+	{
 		cout << char(y);
 	}
-	else {
+	else
+	{
 		y = x % 91;
-		if (y <= 90 && y >= 65) {
+		if (y <= 90 && y >= 65)
+		{
 			cout << char(y);
 		}
-		else {
+		else
+		{
 			cout << "*";
 		}
 	}
